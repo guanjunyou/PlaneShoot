@@ -17,6 +17,7 @@ MainScene::MainScene(QWidget *parent)
 
 MainScene::~MainScene()
 {
+    m_score.write(std::max(m_score.best_score,m_score.score));
     delete ui;
 }
 
@@ -123,14 +124,14 @@ void MainScene::paintEvent(QPaintEvent * event)
     painter.drawPixmap(0,m_map.m_map2_posY,m_map.m_map2);
 
 
-    QRectF rect(0, 20, 300, 200) ;
+    QRectF rect(0, 20, 500, 200) ;
 
    // painter.drawRect(rect);  //为了更直观地看到字体的位置，我们绘制出这个矩形
     QFont font("宋体", 25, QFont::Bold);
     painter.setFont(font);
 
     painter.setPen(QColor(Qt::red));
-    painter.drawText(rect, Qt::AlignHCenter, "当前分数"+QString::number(m_score.score));
+    painter.drawText(rect, Qt::AlignHCenter, "当前分数"+QString::number(m_score.score)+"  历史最高分"+QString::number(m_score.best_score));
 
     //qDebug()<<m_hero.m_life;
     if(m_hero.m_life==0)
@@ -340,11 +341,12 @@ void MainScene::collisionDetection()
             }
             else
             {
-                qDebug()<<"111";
+                //qDebug()<<"111";
                 m_score.isGameOver = true;
                 m_score.life = 0;
                 m_hero.m_life = 0;
                 m_hero.m_Free = true;
+                m_score.write(std::max(m_score.best_score,m_score.score));
 
             }
         }

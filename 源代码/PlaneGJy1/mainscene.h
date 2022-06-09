@@ -16,6 +16,9 @@
 #include"gameover.h"
 #include"boss.h"
 #include"boss_bomb.h"
+#include<fstream>
+#include<istream>
+#include<cmath>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainScene; }
@@ -83,6 +86,7 @@ public:
 
 
     GameOver m_gameover;
+
 
 
 private:

@@ -53,6 +53,7 @@
 /**********  计分栏配置数据 **********/
 #define SCORE_WIDTH 100
 #define SCORE_HEIGHT 100
+#define SCORE_PATH "score.txt"
 
 /**********  GAME OVER **********/
 //#define SCORE_WIDTH 100
