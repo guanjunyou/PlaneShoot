@@ -18,9 +18,9 @@ SOURCES += \
     gameover.cpp \
     heroplane.cpp \
     main.cpp \
-    mainscene.cpp \
     map.cpp \
-    score.cpp
+    score.cpp \
+    mainscene.cpp
 
 HEADERS += \
     bomb.h \
@@ -32,9 +32,9 @@ HEADERS += \
     form.h \
     gameover.h \
     heroplane.h \
-    mainscene.h \
     map.h \
-    score.h
+    score.h \
+    mainscene.h
 
 FORMS += \
     form.ui \

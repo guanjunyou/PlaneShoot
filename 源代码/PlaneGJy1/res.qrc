@@ -48,5 +48,6 @@
         <file>res/boss-bomb-3.png</file>
         <file>res/boss-bomb-1.png</file>
         <file>res/img_bg_level_6.jpg</file>
+        <file>res/img_menu_bg.jpg</file>
     </qresource>
 </RCC>

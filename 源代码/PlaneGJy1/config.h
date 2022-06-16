@@ -1,6 +1,9 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
+/**********  游戏菜单数据 **********/
+#define MENU 0 //0为主菜单  1为游戏开始  2 为退出  3 为查看游戏规则
+
 /**********  游戏配置数据 **********/
 #define GAME_WIDTH  812  //宽度
 #define GAME_HEIGHT 768  //高度

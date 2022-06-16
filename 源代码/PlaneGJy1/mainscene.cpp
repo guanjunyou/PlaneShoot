@@ -17,6 +17,7 @@ MainScene::MainScene(QWidget *parent)
 
 MainScene::~MainScene()
 {
+   // qDebug()<<"析构\n";
     m_score.write(std::max(m_score.best_score,m_score.score));
     delete ui;
 }
@@ -305,9 +306,9 @@ void MainScene::collisionDetection()
             if(m_bosses[i].m_Rect.intersects(m_hero.m_bullets[j].m_Rect))
             {
                 //qDebug()<<m_score.score;
-                if(m_score.isGameOver==false)
-                    m_score.score+=5; //打中 boss加5分
                 m_bosses[i].life--;
+                if(m_score.isGameOver==false && m_bosses[i].life == 0)
+                    m_score.score+=10; //打中 boss加10分
                 if(m_bosses[i].life==0)
                 {
                     m_bosses[i].m_Free=true;
